@@ -6,8 +6,8 @@ const Movie = (props) => {
     const { id } = useParams();
     const { push } = useHistory();
 
-    const movies = [];
-    const movie = movies.find(movie=>movie.id===Number(id));
+    // const movies = [];
+    const movie = props.movies.find(movie=>movie.id===Number(id));
     
     return(<div className="modal-page col">
         <div className="modal-dialog">
@@ -50,7 +50,7 @@ const Movie = (props) => {
 
 const mapStateToProps = state => {
     return {
-        movies: state.movies.movies
+        movies: state.movies
     }
 }
 export default connect(mapStateToProps,{})(Movie);
