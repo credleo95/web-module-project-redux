@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import {connect} from 'react-redux';
-import {deleteMovie} from '../actions/movieActions';
+import {deleteMovie, addMovie} from '../actions/movieActions';
 
 const Movie = (props) => {
     const { id } = useParams();
@@ -15,6 +15,7 @@ const Movie = (props) => {
         deleteMovie(movie.id)
         push('/movies')
     }
+
 
     return(<div className="modal-page col">
         <div className="modal-dialog">
